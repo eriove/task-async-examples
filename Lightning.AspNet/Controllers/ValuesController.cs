@@ -2,67 +2,61 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
+using System.Web.Http;
 using Lightning.Library;
-using Microsoft.AspNetCore.Mvc;
 
-namespace Lightning.Core.Controllers
+namespace Lightning.AspNet.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ValuesController : ControllerBase
+    public class ValuesController : ApiController
     {
         private readonly WorkerClass _workerClass;
 
-        public ValuesController(WorkerClass workerClass)
+        public ValuesController()
         {
-            _workerClass = workerClass;
+            _workerClass = new WorkerClass();
         }
         // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5
-        //[HttpGet("{id}")]
-        //public async Task<ActionResult<string>> Get(int id)
+        //public string Get(int id)
         //{
         //    Stopwatch stopwatch = new Stopwatch();
         //    stopwatch.Start();
-        //    await _workerClass.DoWorkAsync();
-        //    //await _workerClass.DoWorkThreadSyncAsync();
+        //    _workerClass.DoWorkAsync().Wait();
+        //    //_workerClass.DoWorkThreadSyncAsync().Wait();
         //    stopwatch.Stop();
         //    return $"{stopwatch.Elapsed.TotalSeconds:F6} s\n";
         //}
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public async Task<string> GetAsync(int id)
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            _workerClass.DoWorkAsync().Wait();
-            //_workerClass.DoWorkThreadSyncAsync().Wait();
+            //await _workerClass.DoWorkAsync();
+            await _workerClass.DoWorkThreadSyncAsync();
             stopwatch.Stop();
             return $"{stopwatch.Elapsed.TotalSeconds:F6} s\n";
         }
 
+
         // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody]string value)
         {
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody]string value)
         {
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
         public void Delete(int id)
         {
         }
