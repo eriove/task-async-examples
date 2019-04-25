@@ -25,25 +25,25 @@ namespace Lightning.AspNet.Controllers
         }
 
         // GET api/values/5
-        //public string Get(int id)
-        //{
-        //    Stopwatch stopwatch = new Stopwatch();
-        //    stopwatch.Start();
-        //    _workerClass.DoWorkAsync().Wait();
-        //    //_workerClass.DoWorkThreadSyncAsync().Wait();
-        //    stopwatch.Stop();
-        //    return $"{stopwatch.Elapsed.TotalSeconds:F6} s\n";
-        //}
-
-        public async Task<string> GetAsync(int id)
+        public string Get(int id)
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            //await _workerClass.DoWorkAsync();
-            await _workerClass.DoWorkThreadSyncAsync();
+            //_workerClass.DoWorkAsync().Wait();
+            _workerClass.DoWorkThreadSyncAsync().Wait();
             stopwatch.Stop();
             return $"{stopwatch.Elapsed.TotalSeconds:F6} s\n";
         }
+
+        //public async Task<string> GetAsync(int id)
+        //{
+        //    Stopwatch stopwatch = new Stopwatch();
+        //    stopwatch.Start();
+        //    await _workerClass.DoWorkAsync();
+        //    //await _workerClass.DoWorkThreadSyncAsync();
+        //    stopwatch.Stop();
+        //    return $"{stopwatch.Elapsed.TotalSeconds:F6} s\n";
+        //}
 
 
         // POST api/values

@@ -22,7 +22,7 @@ namespace Lightning.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private WorkerClass _workerClass;
+        private readonly WorkerClass _workerClass;
 
         public MainWindow()
         {
@@ -37,7 +37,7 @@ namespace Lightning.WPF
         {
             Cursor lastCursor = Cursor;
             Cursor = Cursors.Wait;
-            Stopwatch stopwatch = new Stopwatch();
+            var stopwatch = new Stopwatch();
             stopwatch.Start();
             await _workerClass.DoWorkThreadSyncAsync();
             stopwatch.Stop();
@@ -48,7 +48,7 @@ namespace Lightning.WPF
         {
             Cursor lastCursor = Cursor;
             Cursor = Cursors.Wait;
-            Stopwatch stopwatch = new Stopwatch();
+            var stopwatch = new Stopwatch();
             stopwatch.Start();
             await _workerClass.DoWorkAsync();
             stopwatch.Stop();
@@ -59,7 +59,7 @@ namespace Lightning.WPF
         {
             Cursor lastCursor = Cursor;
             Cursor = Cursors.Wait;
-            Stopwatch stopwatch = new Stopwatch();
+            var stopwatch = new Stopwatch();
             stopwatch.Start();
             _workerClass.DoWorkThreadSyncAsync().Wait();
             stopwatch.Stop();
@@ -70,7 +70,7 @@ namespace Lightning.WPF
         {
             Cursor lastCursor = Cursor;
             Cursor = Cursors.Wait;
-            Stopwatch stopwatch = new Stopwatch();
+            var stopwatch = new Stopwatch();
             stopwatch.Start();
             _workerClass.DoWorkAsync().Wait();
             stopwatch.Stop();
@@ -81,7 +81,7 @@ namespace Lightning.WPF
         {
             Cursor lastCursor = Cursor;
             Cursor = Cursors.Wait;
-            Stopwatch stopwatch = new Stopwatch();
+            var stopwatch = new Stopwatch();
             stopwatch.Start();
             await _workerClass.DoWorkAsync().ConfigureAwait(false);
             stopwatch.Stop();

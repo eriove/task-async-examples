@@ -1,19 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lightning.Core", "Lightning.Core\Lightning.Core.csproj", "{840C479D-7FED-46D0-9964-FBEA8BE416CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lightning.Core", "Lightning.Core\Lightning.Core.csproj", "{840C479D-7FED-46D0-9964-FBEA8BE416CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lightning.Library", "Lightning.Library\Lightning.Library.csproj", "{F00CC717-C543-4315-8D9B-692C3BCDF801}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lightning.Library", "Lightning.Library\Lightning.Library.csproj", "{F00CC717-C543-4315-8D9B-692C3BCDF801}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lightning.AspNet", "Lightning.AspNet\Lightning.AspNet.csproj", "{3B08B1FC-BB6F-48D7-8A03-67444F70CD47}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lightning.WPF", "Lightning.WPF\Lightning.WPF.csproj", "{1C74F4C0-6C2A-4C77-8075-810AF1C7404E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lightning.Console", "Lightning.Console\Lightning.Console.csproj", "{7B17EEB2-7D45-47B7-BBD8-2FA09AF34C48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lightning.Console", "Lightning.Console\Lightning.Console.csproj", "{7B17EEB2-7D45-47B7-BBD8-2FA09AF34C48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lightning.Tests", "Lightning.Tests\Lightning.Tests.csproj", "{A083BF2F-A2BA-48AA-8781-2F56AC65F90A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lightning.Tests", "Lightning.Tests\Lightning.Tests.csproj", "{A083BF2F-A2BA-48AA-8781-2F56AC65F90A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

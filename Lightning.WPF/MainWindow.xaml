@@ -20,9 +20,9 @@
         </Grid.RowDefinitions>
         <Button Click="DoWorkThreadSyncAsync" Grid.Column="0">DoWorkThreadSyncAsync()</Button>
         <Button Click="DoWorkAsync" Grid.Row="0" Grid.Column="1">DoWorkAsync()</Button>
-        <Button Click="DoWorkThreadSyncAsyncWait" Grid.Row="0" Grid.Column="2">DoWorkThreadSyncAsync().Wait()</Button>
-        <Button Click="DoWorkAsyncWait" Grid.Row="0" Grid.Column="3">DoWorkAsync().Wait()</Button>
-        <Button Click="DoWorkAsyncWaitConfigureAwait" Grid.Row="0" Grid.Column="4">DoWorkAsync().ConfigureAwait(false)</Button>
+        <Button Click="DoWorkThreadSyncAsyncWait" Grid.Row="0" Grid.Column="4">DoWorkThreadSyncAsync().Wait()</Button>
+        <Button Click="DoWorkAsyncWait" Grid.Row="0" Grid.Column="2">DoWorkAsync().Wait()</Button>
+        <Button Click="DoWorkAsyncWaitConfigureAwait" Grid.Row="0" Grid.Column="3">DoWorkAsync().ConfigureAwait(false)</Button>
         <Label x:Name="Label" Grid.Row="1" Grid.ColumnSpan="5" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">No work has been done</Label>
     </Grid>
 </Window>

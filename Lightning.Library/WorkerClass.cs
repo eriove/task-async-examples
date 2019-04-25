@@ -13,7 +13,8 @@ namespace Lightning.Library
         }
         public async Task<string> DoWorkAsync()
         {
-            await Task.Delay(TimeToWait).ConfigureAwait(false);
+            await Task.Delay(TimeToWait)
+                .ConfigureAwait(false);
             return nameof(DoWorkAsync);
         }
     }

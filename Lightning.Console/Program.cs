@@ -17,25 +17,16 @@ namespace Lightning.Console
             //string time = program.DoWorkAsyncWait();
             //string time = program.DoWorkThreadSyncAsyncWait();
             //string time = await program.DoWorkAsync();
-            string time = await program.DoWorkThreadSyncAsync();
-            //string time = await program.DoWorkAsyncWaitConfigureAwait();
+            //string time = await program.DoWorkThreadSyncAsync();
+            string time = await program.DoWorkAsyncWaitConfigureAwait();
             System.Console.WriteLine(time);
             System.Console.ReadKey();
         }
-
-        private async Task<string> DoWorkThreadSyncAsync()
+        private string DoWorkAsyncWait()
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            await _workerClass.DoWorkThreadSyncAsync();
-            stopwatch.Stop();
-            return $"{stopwatch.Elapsed.TotalSeconds:F6} s";
-        }
-        private async Task<string> DoWorkAsync()
-        {
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            await _workerClass.DoWorkAsync();
+            _workerClass.DoWorkAsync().Wait();
             stopwatch.Stop();
             return $"{stopwatch.Elapsed.TotalSeconds:F6} s";
         }
@@ -47,11 +38,19 @@ namespace Lightning.Console
             stopwatch.Stop();
             return $"{stopwatch.Elapsed.TotalSeconds:F6} s";
         }
-        private string DoWorkAsyncWait()
+        private async Task<string> DoWorkAsync()
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            _workerClass.DoWorkAsync().Wait();
+            await _workerClass.DoWorkAsync();
+            stopwatch.Stop();
+            return $"{stopwatch.Elapsed.TotalSeconds:F6} s";
+        }
+        private async Task<string> DoWorkThreadSyncAsync()
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            await _workerClass.DoWorkThreadSyncAsync();
             stopwatch.Stop();
             return $"{stopwatch.Elapsed.TotalSeconds:F6} s";
         }
